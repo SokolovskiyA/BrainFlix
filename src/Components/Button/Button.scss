@@ -1,0 +1,18 @@
+@use '../../style/partials/colors.scss' as *;
+@use '../../style/partials/fonts.scss' as *;
+.button {
+    display: flex;
+    align-items: center;
+    @include button-text;
+    background-color: $primaryLinkColor;
+    height: 1.25rem;
+    padding: 1rem;
+    border-radius: .25rem;
+    border: none;
+    &__text {
+        margin: 0 auto;
+    }
+}
+.button:hover {
+    background-color: $hoverStateColor;
+}

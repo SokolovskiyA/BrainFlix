@@ -1,0 +1,36 @@
+@use '../../style/partials/colors.scss' as *;
+@use '../../style/partials/fonts.scss' as *;
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: $backgroundColor;
+    padding-bottom: 0.5rem;
+    &__logo {
+        text-align: center;
+        width: 100%;
+        margin: 1rem 0 0 0;
+        height: 1.5625rem;
+    }
+    &__searchBar {
+        height: 2.25rem;
+        min-width: 15rem;
+        border-radius: .25rem;
+        padding: 0 .75rem;
+        border: .0625rem solid $dividerColor;
+        background-color: $formBackgroundColor;
+        align-self: center;
+        margin: 0;
+    }
+    &__searchBar:focus {
+        outline: none;
+        border: .125rem solid $primaryLinkColor;
+    }
+    &__upload {
+        margin-bottom: 0.5rem;
+        width: 90%;
+    }
+}

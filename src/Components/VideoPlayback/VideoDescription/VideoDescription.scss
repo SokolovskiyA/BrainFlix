@@ -1,0 +1,38 @@
+@use '../../../style/partials/colors.scss' as *;
+@use '../../../style/partials/fonts.scss' as *;
+
+.videoDescription {
+    padding: 1rem;
+    &__title {
+        @include page-header-mobile;
+        margin: 1rem 0;
+    }
+    &__stats {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 2px solid $dividerColor;
+        border-top: 2px solid $dividerColor;
+        padding: 0.5rem 0;
+    }
+    &__channel, &__date, &__likes-views {
+        width: 50%;
+        margin: 0.5rem 0;
+    }
+    &__channel {
+        @include subheader-mobile;
+    }
+    &__likes-views {
+        display:flex;
+        gap: 1rem;
+        @include label-text;
+        font-weight: 400;
+    }
+    &__date {
+        @include label-text;
+        font-weight: 400;
+    }
+    &__description {
+        padding: 1rem 0;
+        @include body-text-mobile;
+    }
+}

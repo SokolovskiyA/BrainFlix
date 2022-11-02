@@ -1,0 +1,71 @@
+@use './style/partials/colors.scss' as *;
+@use './style/partials/fonts.scss' as *;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Avenir Next';
+}
+
+.video {
+    background-color: black;
+}
+
+.comments {
+    padding: 1rem 0;
+    &__form-container {
+        display: flex;
+        margin: 1rem;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 0.5rem;
+        width: 85%;
+        margin-left: auto;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        border-top: 1px solid $dividerColor;
+    }
+    &__article {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        border-bottom: 1px solid $dividerColor;
+        padding: 1rem 0;
+    }
+    &__avo {
+        margin: 1rem;
+    }
+    &__comment {
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__name {
+        margin: 0.5rem;
+        font-weight: 600;
+    }
+    &__date {
+        margin-left: auto;
+        text-align: center;
+        @include label-text;
+    }
+    &__text {
+        width: 100%;
+        margin: 0.5rem;
+    }
+    &__comment-text {
+        padding: .75rem;
+        border-radius: .25rem;
+        border: 1px solid $labelColor;
+        background-color: $formBackgroundColor;
+        margin: .25rem 0 1.25rem;
+        resize: none;
+    }
+}

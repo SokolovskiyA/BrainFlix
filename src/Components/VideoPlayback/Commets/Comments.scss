@@ -1,0 +1,13 @@
+@use '../../../style/partials/colors.scss' as *;
+@use '../../../style/partials/fonts.scss' as *;
+
+.comments {
+    padding: 0 1rem 1rem;
+    &__count {
+        @include subheader-mobile;
+    }
+    &__label {
+        @include label-text;
+        text-transform: uppercase;
+    }
+}
