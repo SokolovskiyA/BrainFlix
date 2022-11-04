@@ -13,13 +13,20 @@
         text-align: center;
         width: 100%;
         margin: 1rem 0 0 0;
-        height: 1.5625rem;
+    }
+    &__logo-img {
+        width: 10rem;
+        height: auto;
     }
     &__searchBar {
+        background-image: url('../../assets/Icons/search.svg');
+        background-size: 1.5rem;
+        background-position: 0.5rem;
+        padding-left: 2.5rem;
+        background-repeat: no-repeat;
         height: 2.25rem;
         min-width: 15rem;
         border-radius: .25rem;
-        padding: 0 .75rem;
         border: .0625rem solid $dividerColor;
         background-color: $formBackgroundColor;
         align-self: center;
@@ -32,5 +39,34 @@
     &__upload {
         margin-bottom: 0.5rem;
         width: 90%;
+    }
+}
+@media (min-width: 48rem) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 2rem;
+        gap: 1.5rem;
+        &__logo {
+            margin-top: 1.5rem;
+            width:fit-content;
+            display: flex;
+        }
+        &__upload {
+            align-self: flex-end;
+            margin-bottom: 1.125rem;
+        }
+        &__searchBar {
+            height: 3rem;
+            margin-left: auto;
+            margin-top: 1.5rem;
+        }
+    }
+}
+@media (min-width: 80rem) {
+    .header {
+        max-width: 80rem;
+        margin:auto;
     }
 }

@@ -36,3 +36,40 @@
         @include body-text-mobile;
     }
 }
+@media (min-width: 48rem) {
+    .videoDescription {
+        &__title {
+            @include page-header;
+        }
+        &__stats {
+            flex-wrap: nowrap;
+            gap: 2rem;
+            border-top: none;
+            padding-right: 2rem;
+        }
+        &__channel {
+            order: -2;
+            width:fit-content;
+            @include subheader;
+        }
+        &__date {
+            order: -1;
+            width:fit-content;
+            margin-right: auto;
+        }
+        &__likes-views {
+            width: fit-content;
+        }
+        &__description {
+            @include body-text;
+            padding: 2rem 2rem 1rem 0;
+        }
+        
+    }
+}
+
+@media (min-width: 80rem) {
+    .videoDescription {
+        padding: 1rem 0 1rem 1rem;
+    }
+}

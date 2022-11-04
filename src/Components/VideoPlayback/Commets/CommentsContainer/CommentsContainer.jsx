@@ -1,13 +1,11 @@
-import Comments from "../Comments";
 
 function CommentsContainer(props) {
-    console.log(props)
     return (
         <div className='comments__container'>
             {props.comments.map((comment)=> (
             <div className='comments__article' key={comment.id}>
                 <div className="comments__avo">
-                    <img></img>
+                    <img alt='avo'></img>
                 </div>
                 <div className="comments__comment">
                     <p className="comments__name">{comment.name}</p>

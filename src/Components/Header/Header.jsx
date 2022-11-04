@@ -3,14 +3,14 @@ import logo from '../../assets/Logo/BrainFlix-logo.svg';
 import './Header.scss';
 import Button from '../Button/Button'
 import upload from '../../assets/Icons/upload.svg';
-import search from '../../assets/Icons/search.svg';
+
 
 function Header() {
     const uploadLogo = upload;
     return (
         <header className='header'>
-            <a className='header__logo' href=''><img src={logo} alt='site-logo'></img></a>
-            <input type='text' className='header__searchBar'></input>
+            <a className='header__logo' href='#Home'><img className='header__logo-img' src={logo} alt='site-logo'/></a>
+            <input type='text' className='header__searchBar' placeholder='Search'></input>
             <Avatar />
             <Button className='header__upload button' name='upload' src={uploadLogo} spanClass='button__text'/>  
         </header>

@@ -12,3 +12,9 @@
     height: 100%;
     width: auto;
 } 
+@media (min-width: 48rem) {
+    .comments__avo {
+        width: 3rem;
+        height: 3rem;
+    }
+}

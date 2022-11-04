@@ -3,6 +3,60 @@
 
 .comments {
     padding: 0 1rem 1rem;
+    &__form-container {
+        display: flex;
+        margin: 1rem;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 0.5rem;
+        width: 85%;
+        margin-left: auto;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        border-top: 1px solid $dividerColor;
+    }
+    &__article {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        border-bottom: 1px solid $dividerColor;
+        padding: 1rem 0;
+    }
+    &__avo {
+        margin: 1rem;
+    }
+    &__comment {
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__name {
+        margin: 0.5rem;
+        font-weight: 600;
+    }
+    &__date {
+        margin-left: auto;
+        text-align: center;
+        @include label-text;
+    }
+    &__text {
+        width: 100%;
+        margin: 0.5rem;
+    }
+    &__comment-text {
+        padding: .75rem;
+        border-radius: .25rem;
+        border: .0625rem solid $dividerColor;
+        background-color: $formBackgroundColor;
+        margin: .25rem 0 1.25rem;
+        resize: none;
+    }
     &__count {
         @include subheader-mobile;
     }
@@ -11,3 +65,49 @@
         text-transform: uppercase;
     }
 }
+@media (min-width: 48rem) {
+    .comments {
+        &__form {
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        &__container {
+            margin: 1rem 0;
+            border-width: 2px;
+        }
+        &__article {
+            border-width: .125rem;
+        }
+        &__label {
+            width: 100%;
+        }
+        &__comment-text {
+            height: 3rem;
+            width: 70%;
+        }
+        &__button {
+            margin: 0.2rem 0 0 auto;
+        }
+        &__avo {
+            margin-left: 2rem;
+        }
+        &__avo-form {
+            margin-top: 2.5rem;
+        }
+    }
+}
+
+@media (min-width: 80rem) {
+    .comments {
+        padding: 1rem 0;
+        &__container {
+            padding: 0;
+        }
+        &__count {
+            @include subheader;
+            padding-left: 1rem;
+        }
+    }
+}
+

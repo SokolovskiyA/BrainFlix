@@ -1,13 +1,14 @@
 import './VideoLibrary.scss'
-
 import videos from '../../assets/Data/videos.json'
 
-function VideoLibrary() {
+function VideoLibrary(props) {
     return (
         <section className='videoLibrary'>
         <h2 className='videoLibrary__header'>Next Videos</h2>
-        {videos.filter(video => video).map((video)=>(
-            <div className='videoLibrary__item' key={video.id}>
+    {videos.filter(video => video.id !== props.videoId).map((video)=>(
+            <div className='videoLibrary__item' key={video.id} onClick={() => {
+                props.handleClick(video.id);
+                }}>
                 <div className='videoLibrary__video'>
                     <img className='videoLibrary__video-img' src={video.image} alt='video-placeholder'/>
                 </div>

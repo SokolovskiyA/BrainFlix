@@ -2,6 +2,7 @@
 @use '../../style/partials/fonts.scss' as *;
 
 .videoLibrary {
+    max-width: 28.125rem;
     display:flex;
     flex-direction: column;
     padding: 1rem;
@@ -17,8 +18,8 @@
     }
     &__video {
         margin:auto;
-        width: 16rem;
-        height: 9rem;
+        width: 14rem;
+        height: 8rem;
         border-radius: .625rem;
         overflow: hidden;
         background-color:$dividerColor ;
@@ -43,5 +44,32 @@
         width: 100%;
         border-radius: .25rem;
         align-self: stretch;
+    }
+}
+
+@media (min-width: 48rem) {
+    .videoLibrary {
+        padding-left: 2rem;
+        &__video {
+            width: 16rem;
+            height: 8rem;
+        }
+        &__title {
+            @include subheader; 
+        }
+        &__author {
+            @include body-text;
+        }
+    }
+}
+
+@media (min-width: 80rem) {
+    .videoLibrary{
+        padding-left: 2rem;
+        width: 35%;
+        border-left: .125rem solid $dividerColor;
+        &__video {
+            height: 8rem;
+        }
     }
 }
