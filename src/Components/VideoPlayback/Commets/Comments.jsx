@@ -3,7 +3,6 @@ import CommentsContainer from "./CommentsContainer/CommentsContainer";
 import './Comments.scss';
 
 function Comments(props) {
-    
     return (
         <section className='comments'>
             <h2 className='comments__count'>{props.comments.length} Comments</h2>
