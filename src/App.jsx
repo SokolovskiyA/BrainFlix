@@ -51,7 +51,6 @@ function App() {
 }
   
   return (
-    <BrowserRouter>
       <div className="App">
         <Header />
         <Video image={activeVideo.image} video={activeVideo.video}/>
@@ -70,7 +69,6 @@ function App() {
           <VideoLibrary handleClick={chooseVideo}videoId={activeVideo.id}/>
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 
