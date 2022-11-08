@@ -1,0 +1,137 @@
+@use '../../style/partials/colors.scss' as *;
+@use '../../style/partials/fonts.scss' as *;
+
+
+.upload {
+    width: 100%;
+    margin:auto;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $dividerColor;
+    &__header {
+        @include page-header-mobile;
+        margin: 0 0 1rem;
+    }
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__form-div {
+        width: 100%;
+    }
+    &__label {
+        width: 100%;
+        @include label-text;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    &__thumbnail-div {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    &__thumbnail {
+        width:100%;
+        height: auto;
+        border-radius: .25rem;
+    }
+    &__title, &__description {
+        width: 100%;
+        border: .0625rem solid $dividerColor;
+        background-color: $formBackgroundColor;
+        border-radius: .25rem;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+        resize: none;
+    }
+    &__title:focus, &__description:focus {
+        outline: none;
+        border: .125rem solid $primaryLinkColor;
+        
+    }
+    &__title {
+        height: 2.25rem;
+    }
+    &__description {
+        padding: 0.5rem;
+    }
+    &__button {
+        width:100%;
+        margin-bottom: 1rem;
+    }
+    &__cancel {
+        padding-left: 1.325rem;
+        width: 100%;
+        @include button-text;
+        color: $primaryLinkColor;
+        border: none;
+        background-color: inherit;
+    }
+    &__button-div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media (min-width: 48rem) {
+    .upload {
+        padding: 1rem 2rem;
+        &__header {
+            @include page-header;
+            padding: 2rem 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 0.0625rem solid $dividerColor;
+        }
+        &__thumbnail-div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        &__form {
+            gap: 0.5rem;
+        }
+        &__thumbnail-div {
+            width: 55%;
+        }
+        &__button-div {
+            flex-direction: row-reverse;
+            align-items: baseline;
+            gap: 2rem;
+            border-top: .0625rem solid $dividerColor;
+            padding-top: 1rem;
+        }
+        &__button, &__cancel {
+            margin: 0;
+            width: 9.375rem;
+        }
+        &__cancel {
+            align-self: flex-start;
+            margin-top: 1rem;
+        }
+    }
+}
+
+
+@media (min-width: 80rem) {
+    .upload {
+        max-width: 80rem;
+        margin: auto;
+        padding: 0 2rem;
+        &__form {
+            display:flex;
+            justify-content: space-between;
+        }
+        &__thumbnail-div {
+            width: 40%;
+        }
+        &__form-div {
+            width: 55%;
+        }
+        &__title, &__description {
+            margin-top: 0.5rem;
+        }
+        &__description {
+            height: 10.5rem;
+        }
+    }
+}
