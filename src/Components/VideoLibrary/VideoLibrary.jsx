@@ -1,9 +1,11 @@
 import './VideoLibrary.scss'
-import videos from '../../assets/Data/videos.json'
 import {Link} from 'react-router-dom'
 
 function VideoLibrary(props) {
+    const videos = props.videos;
+    console.log(videos);
     return (
+
         <section className='videoLibrary'>
         <h2 className='videoLibrary__header'>Next Videos</h2>
         {videos.filter(video => video.id !== props.videoId).map((video)=>(
