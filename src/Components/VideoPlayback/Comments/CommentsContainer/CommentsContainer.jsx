@@ -1,4 +1,8 @@
 
+import Avatar from '../../../Avatar/Avatar';
+import LikeDelete from '../LikeDelete/LikeDelete';
+
+
 function CommentsContainer(props) {
 
     function timeDifference(current, previous) {
@@ -37,18 +41,16 @@ function CommentsContainer(props) {
         <div className='comments__container'>
             {props.comments.map((comment)=> (
             <div className='comments__article' key={comment.id}>
-                <div className="comments__avo">
-                    
-                </div>
+                <Avatar />
                 <div className="comments__comment">
                     <p className="comments__name">{comment.name}</p>
                     <p className="comments__date">{timeDifference(Date.now(), comment.timestamp)/*to display just a regular date option --> new Date(comment.timestamp).toLocaleDateString()*/}</p>
                     <p className="comments__text">{comment.comment}</p>
                 </div>
+                <LikeDelete id={comment.id} />
             </div>
             )
             )}
-            
         </div>
     );
 }

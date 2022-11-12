@@ -6,8 +6,7 @@
     align-items: center;
     @include button-text;
     background-color: $primaryLinkColor;
-    height: 1.25rem;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: .25rem;
     border: none;
     &__text {
@@ -19,6 +18,7 @@
 }
 @media (min-width: 48rem) {
     .button {
+        padding: 1rem;
         height: 3rem;
         width: 9.375rem;
     }

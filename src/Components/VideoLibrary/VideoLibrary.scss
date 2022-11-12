@@ -2,7 +2,7 @@
 @use '../../style/partials/fonts.scss' as *;
 
 .videoLibrary {
-    max-width: 28.125rem;
+    width: 100%;
     display:flex;
     flex-direction: column;
     padding: 1rem;
@@ -17,15 +17,10 @@
         gap: 1rem;
     }
     &__video {
-        margin:auto;
-        width: 14rem;
-        height: 8rem;
-        border-radius: .625rem;
-        overflow: hidden;
-        background-color:$dividerColor ;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 35%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: .25rem;
     }
     &__text {
         width: 60%;
@@ -39,21 +34,12 @@
     &__author {
         @include body-text-mobile;
     }
-    &__video-img {
-        aspect-ratio: 16/9;
-        width: 100%;
-        border-radius: .25rem;
-        align-self: stretch;
-    }
 }
 
 @media (min-width: 48rem) {
     .videoLibrary {
         padding-left: 2rem;
-        &__video {
-            width: 16rem;
-            height: 8rem;
-        }
+        max-width: 60%;
         &__title {
             @include subheader; 
         }
@@ -68,8 +54,5 @@
         padding-left: 2rem;
         width: 35%;
         border-left: .125rem solid $dividerColor;
-        &__video {
-            height: 8rem;
-        }
     }
 }

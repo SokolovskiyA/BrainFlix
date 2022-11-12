@@ -5,31 +5,30 @@
     padding: 0 1rem 1rem;
     &__form-container {
         display: flex;
-        margin: 1rem;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+    &__form-container .avo-container {
+        margin-top: 1.5rem;
     }
     &__form {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding-left: 0.5rem;
         width: 85%;
         margin-left: auto;
     }
     &__container {
         display: flex;
         flex-direction: column;
-        margin: 1rem;
         border-top: 1px solid $dividerColor;
     }
     &__article {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-around;
         border-bottom: 1px solid $dividerColor;
         padding: 1rem 0;
-    }
-    &__avo {
-        margin: 1rem;
     }
     &__comment {
         width: 85%;
@@ -41,7 +40,7 @@
         font-weight: 600;
     }
     &__date {
-        margin-left: auto;
+        margin: 0.5rem 0 0.5rem auto;
         text-align: center;
         @include label-text;
     }
@@ -57,6 +56,10 @@
         margin: .25rem 0 1.25rem;
         resize: none;
     }
+    &__comment-text:focus {
+        outline: none;
+        border: .125rem solid $primaryLinkColor;
+    }
     &__count {
         @include subheader-mobile;
     }
@@ -64,13 +67,33 @@
         @include label-text;
         text-transform: uppercase;
     }
+    &__like-delete {
+        display:flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin: 0 1.5rem;
+    }
+    &__like-button, &__delete-button {
+        max-height: 1.5rem;
+    }
+    &__like-button:hover, &__delete-button:hover {
+        cursor: pointer;
+    }
 }
 @media (min-width: 48rem) {
     .comments {
+        &__form-container {
+            margin-left: 1.125rem
+        }
+        &__form-container .avo-container {
+            margin-top: 2.5rem;
+        }
         &__form {
             flex-direction: row;
             flex-wrap: wrap;
-            margin: 1rem 0;
+            margin: 1rem 1rem 1rem auto;
         }
         &__container {
             margin: 1rem 0;
@@ -85,15 +108,10 @@
         &__comment-text {
             height: 3rem;
             width: 70%;
+
         }
         &__button {
             margin: 0.2rem 0 0 auto;
-        }
-        &__avo {
-            margin-left: 2rem;
-        }
-        &__avo-form {
-            margin-top: 2.5rem;
         }
     }
 }

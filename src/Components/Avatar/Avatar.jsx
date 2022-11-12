@@ -1,10 +1,10 @@
 import avatar from '../../assets/Images/Mohan-muruge.jpg'
 import './Avatar.scss'
 
-function Avatar() {
+function Avatar(props) {
     return (
-        <div className='comments__avo comments__avo-form'>
-            <img className="comments__avo-img" alt="avo" src={avatar}/>
+        <div className='avo-container'>
+            <img className="avo-img" alt="avo" src={props.avatar}/>
         </div>
     )
 }
