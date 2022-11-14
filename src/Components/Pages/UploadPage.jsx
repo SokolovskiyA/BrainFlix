@@ -31,7 +31,7 @@ function UploadPage() {
                 </div>
                 <div className='upload__button-div'>
                     <Button type='submit' className='button upload__button' name='publish' src={publish} spanClass ='button__text'/>
-                    <button className='upload__cancel'>cancel</button>
+                    <button type='' className='upload__cancel'>cancel</button>
                 </div>
             </form>
         </section>

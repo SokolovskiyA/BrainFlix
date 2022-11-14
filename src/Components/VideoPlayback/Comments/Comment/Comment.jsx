@@ -1,8 +1,8 @@
 import React from 'react'
 import Avatar from '../../../Avatar/Avatar'
-import likeButton from '../../../../assets/Icons/like.png'
+//import likeButton from '../../../../assets/Icons/like.png'
 import deleteButton from '../../../../assets/Icons/delete.png'
-import { useState } from 'react'
+//import { useState } from 'react'
 
 
 function Comment(props) {

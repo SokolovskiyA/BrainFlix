@@ -108,6 +108,9 @@
             align-self: flex-start;
             margin-top: 1rem;
         }
+        &__cancel:hover {
+            color: $hoverStateColor;
+        }
     }
 }
 

@@ -22,7 +22,7 @@ function Comments(props) {
             .catch(error => {
                 console.log("error")
             });
-    },[videoId])
+    },[videoId, api, apiKey])
     function handleSubmit(comment)  {
         const postbody = {
             name: "User",
@@ -45,6 +45,8 @@ function Comments(props) {
             console.log("error")
         });
     }
+
+    /*
     const handleLike = event => {
         let like = 0; 
         if (event) {
@@ -56,14 +58,14 @@ function Comments(props) {
             console.log(result)
         })
     }
-
+*/
     return (
         <section className='comments'>
             <h2 className='comments__count'>{props.comments.length} Comments</h2>
             <Form handleSubmit={handleSubmit}/>
             <div className='comments__container'>
                 {comments.map((comment)=> (
-                <Comment handleLike={handleLike} handleDelete={handleDelete} key={comment.id} comment={comment} />))}
+                <Comment  handleDelete={handleDelete} key={comment.id} comment={comment} />))}
             </div>
         </section>
     )

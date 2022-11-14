@@ -7,13 +7,8 @@ import { useState } from 'react'
 function Form({handleSubmit}) {
     
     const [comment, setComment] = useState("")
-
-    const [disabled, setDisabled] = useState("false")
-
     const isCommentFormDisabled = comment.length === 0;
-    
-    const onSubmit = event => {
-    
+    const onSubmit = event => {  
         event.preventDefault();
         handleSubmit(comment);
         setComment("");
@@ -23,7 +18,6 @@ function Form({handleSubmit}) {
             <Avatar avatar={avatar}/>
             <form onSubmit={onSubmit} className="comments__form" id="commentForm">
                 <label className="comments__label" htmlFor="comment-text">join the concersation</label>
-                
                 <textarea 
                 className="comments__comment-text" 
                 name="comment" 
@@ -32,8 +26,7 @@ function Form({handleSubmit}) {
                 id="comment-text" 
                 rows="5" 
                 placeholder="Add a new comment"></textarea>
-                
-                <Button disabled={disabled} className="comments__button button" name='comment' src={commentLogo} spanClass='button__text'/>
+                <Button disabled={isCommentFormDisabled} className="comments__button button" name='comment' src={commentLogo} spanClass='button__text'/>
             </form>
         </div>
     )
