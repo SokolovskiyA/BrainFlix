@@ -18,6 +18,9 @@ function HomePage() {
     useEffect(()=> {
         axios.get(`${API_URL}/videos${API_KEY}`).then(response => {
             setAllVideos(response.data);
+            })
+            .catch(error => {
+                console.log("error")
             });
     }, []);
     useEffect(()=>{
@@ -27,12 +30,18 @@ function HomePage() {
             axios.get(`${API_URL}/videos/${activeVideoId}${API_KEY}`).then (response =>{
                 setActiveVideo(response.data)
             })
+            .catch(error => {
+                console.log("error")
+            });
         }
     }, [allVideos, id]);
     useEffect (() => {
         if (id) {
             axios.get(`${API_URL}/videos/${id}${API_KEY}`).then(response => {
                 setActiveVideo(response.data)
+            })
+            .catch(error => {
+                console.log("error")
             });
         }
     }, [id]) 
