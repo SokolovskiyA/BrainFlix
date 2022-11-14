@@ -6,8 +6,8 @@ import { useState } from 'react'
 
 
 function Comment(props) {
-    let {handleLike, handleDelete, comment} = props
-    let [likeCount, setLikeCount] = useState(0)
+    let { handleDelete, comment} = props
+    //let [likeCount, setLikeCount] = useState(0)
 
     function timeDifference(current, previous) {
         var msPerMinute = 60 * 1000;

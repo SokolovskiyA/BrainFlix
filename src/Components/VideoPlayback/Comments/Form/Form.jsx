@@ -5,14 +5,18 @@ import avatar from '../../../../assets/Images/Mohan-muruge.jpg'
 import { useState } from 'react'
 
 function Form({handleSubmit}) {
+    
     const [comment, setComment] = useState("")
-    const isCommentFormDisabled = comment.length === 0;
-    const onSubmit = event => {
 
+    const [disabled, setDisabled] = useState("false")
+
+    const isCommentFormDisabled = comment.length === 0;
+    
+    const onSubmit = event => {
+    
         event.preventDefault();
         handleSubmit(comment);
         setComment("");
-
     }
     return(
         <div className="comments__form-container">
@@ -29,7 +33,7 @@ function Form({handleSubmit}) {
                 rows="5" 
                 placeholder="Add a new comment"></textarea>
                 
-                <Button disabled={isCommentFormDisabled} className="comments__button button" name='comment' src={commentLogo} spanClass='button__text'/>
+                <Button disabled={disabled} className="comments__button button" name='comment' src={commentLogo} spanClass='button__text'/>
             </form>
         </div>
     )
