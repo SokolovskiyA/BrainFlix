@@ -25,13 +25,13 @@ function UploadPage() {
                 </div>
                 <div className='upload__form-div'>
                     <label className='upload__label'>title your video</label>
-                    <input className="upload__title" type="text" placeholder="Add title to your video"></input>
+                    <input className="upload__title" type="text" placeholder="Add title to your video" ></input>
                     <label className='upload__label'>add a video description</label>
                     <textarea className="upload__description" name="comment" rows="5" placeholder="Add a description to your video"></textarea>
                 </div>
                 <div className='upload__button-div'>
                     <Button type='submit' className='button upload__button' name='publish' src={publish} spanClass ='button__text'/>
-                    <button type='' className='upload__cancel'>cancel</button>
+                    <button disabled={true} className='upload__cancel'>cancel</button>
                 </div>
             </form>
         </section>
