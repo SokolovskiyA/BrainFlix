@@ -50,8 +50,8 @@ function Comment(props) {
                 <p className="comments__text">{comment.comment}</p>
             </div>
             <div className="comments__like-delete">
-                {/* <img onClick={handleLike} id={comment.id}  className="comments__like-button" src={likeButton} alt='like button'/>
-                <p className="comments__like count">{likeCount}</p> */}
+                {/*<img id={comment.id}  className="comments__like-button" src={likeButton} alt='like button'/>
+                <p className="comments__like count">{likeCount}</p>*/}
                 <img onClick={handleDelete} id={comment.id} className="comments__delete-button" src={deleteButton} alt='delete button'/>
             </div> 
         </div>

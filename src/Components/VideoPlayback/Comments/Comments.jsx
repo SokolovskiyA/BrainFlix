@@ -12,7 +12,6 @@ function Comments(props) {
 
     useEffect (()=> {
         axios.get(`${api}/videos/${videoId}${apiKey}`).then(response => {
-            console.log(response.data.comments);
             const comments = response.data.comments
             comments.sort(function(x, y){
                 return y.timestamp - x.timestamp;

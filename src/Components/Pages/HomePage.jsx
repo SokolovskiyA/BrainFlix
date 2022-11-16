@@ -26,7 +26,6 @@ function HomePage() {
     useEffect(()=>{
         if (allVideos.length > 0 && !id) { 
             const activeVideoId = allVideos[0].id
-            // console.log(activeVideoId)
             axios.get(`${API_URL}/videos/${activeVideoId}${API_KEY}`).then (response =>{
                 setActiveVideo(response.data)
             })
