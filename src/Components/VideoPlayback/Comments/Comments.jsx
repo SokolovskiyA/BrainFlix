@@ -7,11 +7,11 @@ import axios from 'axios';
 
 
 function Comments(props) {
-    const { api, apiKey, videoId } = props
+    const { api, videoId } = props
     const [ comments, setComments ] = useState([])
 
     useEffect (()=> {
-        axios.get(`${api}/videos/${videoId}${apiKey}`).then(response => {
+        axios.get(`${api}/videos/${videoId}`).then(response => {
             const comments = response.data.comments
             comments.sort(function(x, y){
                 return y.timestamp - x.timestamp;
@@ -21,23 +21,29 @@ function Comments(props) {
             .catch(error => {
                 console.log("error")
             });
-    },[videoId, api, apiKey])
+    },[videoId, api])
     function handleSubmit(comment)  {
         const postbody = {
             name: "User",
             comment: comment
         }
-        axios.post(`${api}/videos/${videoId}/comments${apiKey}`, postbody)
+        axios.post(`${api}/videos/${videoId}/comments`, postbody)
         .then(response => {
-            setComments ([response.data, ...comments])
+            const newComments = response.data
+            newComments.sort(function(x, y){
+                return y.timestamp - x.timestamp;
+            })
+            setComments(newComments)
         })
         .catch(error => {
             console.log("error")
         });
     }
+
     const handleDelete = event => {
         const commentId = event.currentTarget.id
-        axios.delete(`${api}/videos/${videoId}/comments/${commentId}${apiKey}`).then(response => {
+        console.log(commentId)
+        axios.delete(`${api}/videos/${videoId}/comments/${commentId}`).then(response => {
             setComments(comments.filter(comment => comment.id !== commentId))
         })
         .catch(error => {
