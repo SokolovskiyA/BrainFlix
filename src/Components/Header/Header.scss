@@ -5,8 +5,10 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:space-between;
+    gap: 1rem;
     flex-wrap: wrap;
+    padding: 1rem;
     background-color: $backgroundColor;
     &__logo {
         text-align: center;
@@ -23,13 +25,12 @@
         background-position: 0.5rem;
         padding-left: 2.5rem;
         background-repeat: no-repeat;
-        height: 2.25rem;
-        min-width: 15rem;
+        height: 3rem;
+        width: 80%;
         border-radius: .25rem;
         border: .0625rem solid $dividerColor;
         background-color: $formBackgroundColor;
         align-self: center;
-        margin-right: 1rem;
     }
     &__searchBar:focus {
         outline: none;
@@ -39,7 +40,7 @@
         margin-right: auto;
     }
     &__upload {
-        width: 90%;
+        width: 100%;
         margin: 0.5rem auto;
     }
 }
@@ -47,23 +48,27 @@
     .header {
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         align-items: center;
         padding: 1rem 2rem;
         gap: 1.5rem;
         &__logo {
+            order: -3;
             width: fit-content;
             display: flex;
             align-items: center;
             margin-bottom: 1rem;
+            margin-right: auto;
         }
         &__searchBar {
-            height: 3rem;
-            margin-left: auto;
+            order: -2;
+            width: 18rem;
         }
         &__avo-container {
-            margin-right: 1rem;
+            order: -4;
         }
         &__upload {
+            order: -1;
             margin: 0 0.5rem;
         }
     }

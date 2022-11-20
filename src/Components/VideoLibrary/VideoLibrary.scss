@@ -3,6 +3,7 @@
 
 .videoLibrary {
     width: 100%;
+    max-width: 35rem;
     display:flex;
     flex-direction: column;
     padding: 1rem;
@@ -26,22 +27,24 @@
         width: 60%;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         gap: 0.5rem;
     }
     &__title {
-        @include subheader-mobile;
+        @include subheader;
     }
     &__author {
-        @include body-text-mobile;
+        @include body-text;
     }
 }
 
 @media (min-width: 48rem) {
     .videoLibrary {
         padding-left: 2rem;
-        max-width: 60%;
+        
         &__title {
             @include subheader; 
+            font-size: 1.125rem;
         }
         &__author {
             @include body-text;

@@ -1,13 +1,12 @@
 import React from 'react'
 import Avatar from '../../../Avatar/Avatar'
-//import likeButton from '../../../../assets/Icons/like.png'
+import likeButton from '../../../../assets/Icons/like.png'
 import deleteButton from '../../../../assets/Icons/delete.png'
 //import { useState } from 'react'
 
 
 function Comment(props) {
-    let { handleDelete, comment} = props
-    //let [likeCount, setLikeCount] = useState(0)
+    let {handleLike, handleDelete, comment} = props
 
     function timeDifference(current, previous) {
         var msPerMinute = 60 * 1000;
@@ -50,8 +49,8 @@ function Comment(props) {
                 <p className="comments__text">{comment.comment}</p>
             </div>
             <div className="comments__like-delete">
-                {/*<img id={comment.id}  className="comments__like-button" src={likeButton} alt='like button'/>
-                <p className="comments__like count">{likeCount}</p>*/}
+                <img id={comment.id}  className="comments__like-button" src={likeButton} alt='like button'/>
+                <p className="comments__like count">0</p>
                 <img onClick={handleDelete} id={comment.id} className="comments__delete-button" src={deleteButton} alt='delete button'/>
             </div> 
         </div>

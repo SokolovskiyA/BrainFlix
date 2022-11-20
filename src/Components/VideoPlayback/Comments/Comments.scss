@@ -61,7 +61,8 @@
         border: .125rem solid $primaryLinkColor;
     }
     &__count {
-        @include subheader-mobile;
+        @include subheader;
+        margin: 0 1rem
     }
     &__label {
         @include label-text;
@@ -84,16 +85,18 @@
 }
 @media (min-width: 48rem) {
     .comments {
-        &__form-container {
-            margin-left: 1.125rem
+        &__count {
+            margin: 1rem 0;
+            font-weight: 700;
         }
-        &__form-container .avo-container {
-            margin-top: 2.5rem;
+        &__form-container {
+            margin-left: 1.125rem;
+            padding: 0;
         }
         &__form {
             flex-direction: row;
             flex-wrap: wrap;
-            margin: 1rem 1rem 1rem auto;
+            margin: 0rem 1rem 0rem auto;
         }
         &__container {
             margin: 1rem 0;
@@ -108,7 +111,6 @@
         &__comment-text {
             height: 3rem;
             width: 70%;
-
         }
         &__button {
             margin: 0.2rem 0 0 auto;

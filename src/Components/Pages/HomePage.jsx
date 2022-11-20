@@ -14,6 +14,7 @@ function HomePage() {
     const API_URL = "http://localhost:5000"
     const [allVideos, setAllVideos] = useState([]);
     const [activeVideo, setActiveVideo] = useState({})
+    ///ON LOAD SET allVideos => constructs videoLibrary section
     useEffect(()=> {
         axios.get(`${API_URL}/videos`).then(response => {
             setAllVideos(response.data);
@@ -22,6 +23,7 @@ function HomePage() {
                 console.log("error")
             });
     }, []);
+    /// IF NO VIDEO CHOOSEN LOADS THE FIRST ONE FROM allVideos
     useEffect(()=>{
         if (allVideos.length > 0 && !id) { 
             const activeVideoId = allVideos[0].id
@@ -33,6 +35,7 @@ function HomePage() {
             });
         }
     }, [allVideos, id]);
+    ////SETS ACTIVE VIDEO BASED ON ID FROM URL
     useEffect (() => {
         if (id) {
             axios.get(`${API_URL}/videos/${id}`).then(response => {

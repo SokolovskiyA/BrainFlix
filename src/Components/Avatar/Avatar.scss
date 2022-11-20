@@ -1,9 +1,9 @@
 @use '../../style/partials/colors.scss' as *; 
 
 .avo-container {
-    background-color: $labelColor;
-    width: 2.25rem;
-    height: 2.25rem;
+    background-color: $dividerColor;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     overflow: hidden;
     align-items: center;
@@ -12,9 +12,3 @@
     height: 100%;
     width: auto;
 } 
-@media (min-width: 48rem) {
-    .avo-container {
-        width: 3rem;
-        height: 3rem;
-    }
-}

@@ -4,7 +4,7 @@
 .videoDescription {
     padding: 1rem;
     &__title {
-        @include page-header-mobile;
+        @include page-header;
         margin: 1rem 0;
     }
     &__stats {
@@ -19,7 +19,7 @@
         margin: 0.5rem 0;
     }
     &__channel {
-        @include subheader-mobile;
+        @include subheader;
     }
     &__likes-views {
         display:flex;
@@ -27,17 +27,22 @@
         @include label-text;
         font-weight: 400;
     }
+    &__icon {
+        width: auto;
+        height: 1rem;
+    }
     &__date {
         @include label-text;
         font-weight: 400;
     }
     &__description {
         padding: 1rem 0;
-        @include body-text-mobile;
+        @include body-text;
     }
 }
 @media (min-width: 48rem) {
     .videoDescription {
+        padding: 2rem;
         &__title {
             @include page-header;
         }

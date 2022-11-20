@@ -1,7 +1,9 @@
 @use '../../style/partials/colors.scss' as *;
 @use '../../style/partials/fonts.scss' as *;
 
-
+.upload-input {
+    display: none;
+}
 .upload {
     width: 100%;
     margin:auto;
@@ -10,7 +12,7 @@
     flex-direction: column;
     border-top: 1px solid $dividerColor;
     &__header {
-        @include page-header-mobile;
+        @include page-header;
         margin: 0 0 1rem;
     }
     &__form {
@@ -71,6 +73,9 @@
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+    }
+    &__chooser { 
+        display: none;
     }
 }
 @media (min-width: 48rem) {

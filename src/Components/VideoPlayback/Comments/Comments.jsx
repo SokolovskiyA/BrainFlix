@@ -9,6 +9,7 @@ import axios from 'axios';
 function Comments(props) {
     const { api, videoId } = props
     const [ comments, setComments ] = useState([])
+    
 
     useEffect (()=> {
         axios.get(`${api}/videos/${videoId}`).then(response => {
@@ -42,7 +43,6 @@ function Comments(props) {
 
     const handleDelete = event => {
         const commentId = event.currentTarget.id
-        console.log(commentId)
         axios.delete(`${api}/videos/${videoId}/comments/${commentId}`).then(response => {
             setComments(comments.filter(comment => comment.id !== commentId))
         })
@@ -50,18 +50,11 @@ function Comments(props) {
             console.log("error")
         });
     }
-
-    /*
+/*
     const handleLike = event => {
-        let like = 0; 
-        if (event) {
-            like = +1;
-        }
-        console.log(event.currentTarget.id)
         const commentId = event.currentTarget.id
-        axios.put(`${api}/videos/${videoId}/comments/${commentId}${apiKey}`, like).then(result => {
-            console.log(result)
-        })
+        setLikes(+1)
+        console.log(likes)
     }
 */
     return (
