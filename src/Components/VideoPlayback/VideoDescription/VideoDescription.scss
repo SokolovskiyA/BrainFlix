@@ -44,7 +44,7 @@
     .videoDescription {
         padding: 2rem;
         &__title {
-            @include page-header;
+            @include page-header-big;
         }
         &__stats {
             flex-wrap: nowrap;
@@ -55,7 +55,7 @@
         &__channel {
             order: -2;
             width:fit-content;
-            @include subheader;
+            @include subheader-big;
         }
         &__date {
             order: -1;

@@ -2,12 +2,25 @@ import React from 'react'
 import Avatar from '../../../Avatar/Avatar'
 import likeButton from '../../../../assets/Icons/like.png'
 import deleteButton from '../../../../assets/Icons/delete.png'
-//import { useState } from 'react'
+import { useState } from 'react'
+//import axios from 'axios'
 
 
 function Comment(props) {
-    let {handleLike, handleDelete, comment} = props
+    let {handleDelete, comment} = props
+    let [likes, setLikes] = useState(comment.likes)
 
+    const handleLike = event => {
+        likes = likes + 1
+        setLikes(likes)
+        /*
+        axios.put(`${api}/videos/${videoId}/comments/${event.target.id}`, likes  ).then(response => {
+        })
+        .catch(error => {
+            console.log("error")
+        });
+        */
+    }
     function timeDifference(current, previous) {
         var msPerMinute = 60 * 1000;
         var msPerHour = msPerMinute * 60;
@@ -49,8 +62,8 @@ function Comment(props) {
                 <p className="comments__text">{comment.comment}</p>
             </div>
             <div className="comments__like-delete">
-                <img id={comment.id}  className="comments__like-button" src={likeButton} alt='like button'/>
-                <p className="comments__like count">0</p>
+                <img onClick={handleLike} id={comment.id}  className="comments__like-button" src={likeButton} alt='like button'/>
+                <p className="comments__like count">{likes}</p>
                 <img onClick={handleDelete} id={comment.id} className="comments__delete-button" src={deleteButton} alt='delete button'/>
             </div> 
         </div>

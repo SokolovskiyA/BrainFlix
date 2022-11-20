@@ -8,9 +8,8 @@ import axios from 'axios';
 
 function Comments(props) {
     const { api, videoId } = props
-    const [ comments, setComments ] = useState([])
-    
-
+    const [ comments, setComments ] = useState (props.comments)
+    const [ commentCount, setCount ] = useState (props.comments.length)
     useEffect (()=> {
         axios.get(`${api}/videos/${videoId}`).then(response => {
             const comments = response.data.comments
@@ -23,6 +22,7 @@ function Comments(props) {
                 console.log("error")
             });
     },[videoId, api])
+    ///COMMENT FORM SUBMIT HANDLER
     function handleSubmit(comment)  {
         const postbody = {
             name: "User",
@@ -35,35 +35,30 @@ function Comments(props) {
                 return y.timestamp - x.timestamp;
             })
             setComments(newComments)
+            setCount(newComments.length)
         })
         .catch(error => {
             console.log("error")
         });
     }
-
+    ///COMMENT DELETE HANDLER
     const handleDelete = event => {
         const commentId = event.currentTarget.id
         axios.delete(`${api}/videos/${videoId}/comments/${commentId}`).then(response => {
             setComments(comments.filter(comment => comment.id !== commentId))
+            setCount (commentCount -1)
         })
         .catch(error => {
             console.log("error")
         });
     }
-/*
-    const handleLike = event => {
-        const commentId = event.currentTarget.id
-        setLikes(+1)
-        console.log(likes)
-    }
-*/
     return (
         <section className='comments'>
-            <h2 className='comments__count'>{props.comments.length} Comments</h2>
+            <h2 className='comments__count'>{commentCount} Comments</h2>
             <Form handleSubmit={handleSubmit}/>
             <div className='comments__container'>
                 {comments.map((comment)=> (
-                <Comment  handleDelete={handleDelete} key={comment.id} comment={comment} />))}
+                <Comment handleDelete={handleDelete} api={api} videoId={videoId} key={comment.id} comment={comment} />))}
             </div>
         </section>
     )

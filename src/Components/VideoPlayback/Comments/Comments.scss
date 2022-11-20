@@ -125,7 +125,7 @@
             padding: 0;
         }
         &__count {
-            @include subheader;
+            @include subheader-big;
             padding-left: 1rem;
         }
     }

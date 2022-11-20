@@ -41,9 +41,8 @@
 @media (min-width: 48rem) {
     .videoLibrary {
         padding-left: 2rem;
-        
         &__title {
-            @include subheader; 
+            @include subheader-big; 
             font-size: 1.125rem;
         }
         &__author {

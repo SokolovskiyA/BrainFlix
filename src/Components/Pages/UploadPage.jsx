@@ -59,7 +59,10 @@ function UploadPage() {
                     <input className="upload__title" type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Add title to your video" ></input>
                     <label className='upload__label' labelfor="description">add a video description</label>
                     <textarea className="upload__description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} rows="5" placeholder="Add a description to your video"></textarea>
-                    <input type='file' name='image' onChange={handleImageChoice}></input>
+                    <label labelfor="image" className="upload__file-picker button">
+                        <img alt='button-logo' src={publish}/><span className="button__text">upload thumbnail</span>
+                        <input className="upload__image" type='file' name='image' onChange={handleImageChoice}/>
+                    </label>
                 </div>
                 <div className='upload__button-div'>
                     <Button type='submit' className='button upload__button' name='publish' src={publish} spanClass ='button__text'/>
